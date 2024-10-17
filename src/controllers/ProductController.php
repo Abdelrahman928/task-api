@@ -34,13 +34,14 @@ class ProductController{
         $products = ProductManager::getAll();
 
         if(! $products){
-            http_response_code(400);
+            http_response_code(404);
             echo json_encode([
                 'status' => 404,
                 'message' => 'no products found.'
             ]);
             return;
         }
+        http_response_code(200);
         echo json_encode([
             'status' => 200,
             'products' => $products
@@ -55,6 +56,7 @@ class ProductController{
         }
 
         if (ProductManager::destroy($request['ids'])) {
+            http_response_code(200);
             echo json_encode([
                 'status' => 200,
                 'message' => 'Product deleted successfully.'

@@ -1,6 +1,6 @@
 <?php
 
-$router->get('/', 'App\Controllers\ProductController@index');
-$router->post('/add-product', 'App\Controllers\ProductController@create');
-$router->delete('/products', 'App\Controllers\ProductController@destroy');
+$router->get('/', 'App\controllers\ProductController@index');
+$router->post('/add-product', 'App\controllers\ProductController@create');
+$router->delete('/products', 'App\controllers\ProductController@destroy');
 
