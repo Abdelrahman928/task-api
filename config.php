@@ -8,8 +8,8 @@ return [
     ],
 
     'credentials' => [
-        'username' => 'root',
-        'password' => 'root'
+        'username' => //,
+        'password' => //
     ]
 
 ];
