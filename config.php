@@ -1,8 +1,15 @@
 <?php 
 
 return [
-    'host' => '127.0.0.1',
-    'port' => 3306,
-    'dbname' => 'Task',
-    'username' => 'root',
+    'database' => [
+        'host' => '127.0.0.1',
+        'port' => 3306,
+        'dbname' => 'Task',
+    ],
+
+    'credentials' => [
+        'username' => 'root',
+        'password' => 'root'
+    ]
+
 ];

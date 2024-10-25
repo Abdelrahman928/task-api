@@ -4,6 +4,8 @@ require 'vendor/autoload.php';
 require 'src/core/bootstrap.php';
 use App\core\Router;
 
+header('Content-Type: application/json');
+
 if (isset($_SERVER['HTTP_ORIGIN'])) {
     header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
     header('Access-Control-Allow-Credentials: true');

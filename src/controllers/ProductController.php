@@ -5,8 +5,6 @@ namespace App\controllers;
 use App\core\Validator;
 use App\core\ProductManager;
 
-header('Content-Type: application/json');
-
 class ProductController{
 
     public function create($request){
@@ -33,7 +31,7 @@ class ProductController{
     public function index(){
         $products = ProductManager::getAll();
 
-        if(! $products){
+        if(Empty($products)){
             http_response_code(404);
             echo json_encode([
                 'status' => 404,

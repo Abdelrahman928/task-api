@@ -16,10 +16,10 @@ class Database{
 
     public function connect(){
         $this->connection = null;
-        $dsn = 'mysql:' . http_build_query($this->config, '', ';');
+        $dsn = 'mysql:' . http_build_query($this->config->database, '', ';');
         
         try{
-            $this->connection = new PDO($dsn, $username = 'root', $password = '');
+            $this->connection = new PDO($dsn, $username = $this->config->credentials->username, $password = $this->config->credentials->password);
             $this->connection->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch(PDOException $e){
             throw new PDOException('Connection failed: ' . $e->getMessage());
